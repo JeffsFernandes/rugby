@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  founded: 2012-04-08
+  female: false
+  male: false
+  university_team: false
+  university: 
+  coach: MyString
+  sponsor: 
+  training_info: MyText
+  structure_info: MyText
+  players: MyText
+
+two:
+  name: MyString
+  founded: 2012-04-08
+  female: false
+  male: false
+  university_team: false
+  university: 
+  coach: MyString
+  sponsor: 
+  training_info: MyText
+  structure_info: MyText
+  players: MyText

@@ -11,6 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20120408231547) do
+
+  create_table "teams", :force => true do |t|
+    t.string   "name"
+    t.date     "founded"
+    t.boolean  "female"
+    t.boolean  "male"
+    t.boolean  "university_team"
+    t.string   "university_name"
+    t.string   "coach"
+    t.string   "sponsor"
+    t.text     "training_info"
+    t.text     "structure_info"
+    t.text     "players"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
 end

@@ -1,0 +1,61 @@
+<%= form_for(@team) do |f| %>
+  <% if @team.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@team.errors.count, "error") %> prohibited this team from being saved:</h2>
+
+      <ul>
+      <% @team.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :founded %><br />
+    <%= f.date_select :founded %>
+  </div>
+  <div class="field">
+    <%= f.label :female %><br />
+    <%= f.check_box :female %>
+  </div>
+  <div class="field">
+    <%= f.label :male %><br />
+    <%= f.check_box :male %>
+  </div>
+  <div class="field">
+    <%= f.label :university_team %><br />
+    <%= f.check_box :university_team %>
+  </div>
+  <div class="field">
+    <%= f.label :university_name %><br />
+    <%= f.text_field :university_name %>
+  </div>
+  <div class="field">
+    <%= f.label :coach %><br />
+    <%= f.text_field :coach %>
+  </div>
+  <div class="field">
+    <%= f.label :sponsor %><br />
+    <%= f.text_field :sponsor %>
+  </div>
+  <div class="field">
+    <%= f.label :training_info %><br />
+    <%= f.text_area :training_info %>
+  </div>
+  <div class="field">
+    <%= f.label :structure_info %><br />
+    <%= f.text_area :structure_info %>
+  </div>
+  <div class="field">
+    <%= f.label :players %><br />
+    <%= f.text_area :players %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
