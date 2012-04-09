@@ -1,62 +1,67 @@
-<p id="notice"><%= notice %></p>
- 
-<%= image_tag @team.logo.url(:medium) %>
+<h1>/Team</h1>
 
 <p>
-  <b>Name:</b>
+  <b>Escudo</b><br>
+  <%= image_tag @team.logo.url(:medium) %>
+</p>
+
+<p>
+  <b>Name</b><br>
   <%= @team.name %>
 </p>
 
 <p>
-  <b>Founded:</b>
+  <b>Founded</b><br>
   <%= @team.founded %>
 </p>
 
 <p>
-  <b>Female:</b>
+  <b>Female</b><br>
   <%= @team.female %>
 </p>
 
 <p>
-  <b>Male:</b>
+  <b>Male</b><br>
   <%= @team.male %>
 </p>
 
 <p>
-  <b>University team:</b>
+  <b>University team</b><br>
   <%= @team.university_team %>
 </p>
 
 <p>
-  <b>University:</b>
+  <b>University name</b><br>
   <%= @team.university_name %>
 </p>
 
 <p>
-  <b>Coach:</b>
+  <b>Coach</b><br>
   <%= @team.coach %>
 </p>
 
 <p>
-  <b>Sponsor:</b>
+  <b>Sponsor</b><br>
   <%= @team.sponsor %>
 </p>
 
 <p>
-  <b>Training info:</b>
+  <b>Training info</b><br>
   <%= @team.training_info %>
 </p>
 
 <p>
-  <b>Structure info:</b>
+  <b>Structure info</b><br>
   <%= @team.structure_info %>
 </p>
 
 <p>
-  <b>Players:</b>
+  <b>Players</b><br>
   <%= @team.players %>
 </p>
 
-
-<%= link_to 'Edit', edit_team_path(@team) %> |
-<%= link_to 'Back', teams_path %>
+<div class="form-actions">
+  <%= link_to 'Back', teams_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_team_path(@team), :class => 'btn' %>
+  <%= link_to 'Delete', team_path(@team), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

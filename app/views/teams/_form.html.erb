@@ -1,64 +1,94 @@
-<%= form_for(@team, :html => {:multipart => true}) do |f| %>
-  <% if @team.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@team.errors.count, "error") %> prohibited this team from being saved:</h2>
-
-      <ul>
-      <% @team.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @team, :html => { :class => 'form-horizontal', :multipart => true } do |f| %>
+  <fieldset>
+    <legend><%= controller.action_name.capitalize %> /Team</legend>
+       		
+    <div class="control-group">
+      <%= f.label "Escudo", :class => 'control-label' %>
+      <div class="controls">
+        <%= f.file_field :logo, :class => 'file_field' %>
+      </div>
     </div>
-  <% end %> 
-	<div class="field">
-    <%= f.label "Escudo do time" %><br />
-    <%= f.file_field :logo %>
-  </div>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :founded %><br />
-    <%= f.date_select :founded %>
-  </div>
-  <div class="field">
-    <%= f.label :female %><br />
-    <%= f.check_box :female %>
-  </div>
-  <div class="field">
-    <%= f.label :male %><br />
-    <%= f.check_box :male %>
-  </div>
-  <div class="field">
-    <%= f.label :university_team %><br />
-    <%= f.check_box :university_team %>
-  </div>
-  <div class="field">
-    <%= f.label :university_name %><br />
-    <%= f.text_field :university_name %>
-  </div>
-  <div class="field">
-    <%= f.label :coach %><br />
-    <%= f.text_field :coach %>
-  </div>
-  <div class="field">
-    <%= f.label :sponsor %><br />
-    <%= f.text_field :sponsor %>
-  </div>
-  <div class="field">
-    <%= f.label :training_info %><br />
-    <%= f.text_area :training_info %>
-  </div>
-  <div class="field">
-    <%= f.label :structure_info %><br />
-    <%= f.text_area :structure_info %>
-  </div>
-  <div class="field">
-    <%= f.label :players %><br />
-    <%= f.text_area :players %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+    <div class="control-group">
+      <%= f.label :name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :name, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :founded, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.date_select :founded, :class => 'date_select' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :female, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.check_box :female, :class => 'check_box' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :male, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.check_box :male, :class => 'check_box' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :university_team, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.check_box :university_team, :class => 'check_box' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :university_name, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :university_name, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :coach, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :coach, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :sponsor, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :sponsor, :class => 'text_field' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :training_info, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :training_info, :class => 'text_area' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :structure_info, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :structure_info, :class => 'text_area' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :players, :class => 'control-label' %>
+      <div class="controls">
+        <%= f.text_area :players, :class => 'text_area' %>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', teams_path, :class => 'btn' %>
+    </div>
+  </fieldset>
 <% end %>
